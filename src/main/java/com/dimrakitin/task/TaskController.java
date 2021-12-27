@@ -1,8 +1,8 @@
 package com.dimrakitin.task;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping
 public class TaskController {
     
+    private final TaskService taskService;
+    
+    @Autowired
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
+    
     @GetMapping(path = "api/v1/task")
     public List<Task> getTasks() {
-        List<Task> tasks = new ArrayList<Task>();
-        tasks.add(new Task(1L, "wash the dishes", false));
-        tasks.add(new Task(2L, "read the book", false));
-        return tasks;
+        return taskService.getTasks();
     }
 
 }
