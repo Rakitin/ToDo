@@ -9,7 +9,6 @@ class AppTest {
 	
 	@Test
 	void contextLoads() {
-//		 assertThat(greeter.get(), is("Hello, Boot!"));
 	}
 
 }
