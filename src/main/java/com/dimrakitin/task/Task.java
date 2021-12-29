@@ -1,7 +1,16 @@
 package com.dimrakitin.task;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Task {
+    
+    @Id
+    @GeneratedValue
     private Long id;
+
     private String text;
     private Boolean isDone;
     
@@ -13,11 +22,11 @@ public class Task {
     }
 
     public Task(String text, Boolean isDone) {
-        this(-1L, text, isDone);
+        this(null, text, isDone);
     }
 
     public Task(String text) {
-        this(-1L, text, false);
+        this(null, text, false);
     }
     
     public void setId(Long id) {
