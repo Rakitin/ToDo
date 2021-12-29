@@ -1,6 +1,5 @@
 package com.dimrakitin.task;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,7 @@ public class TaskService {
     }
 
     public void addNewTask(Task task) {
+        System.out.println(task);
     }
 
 }

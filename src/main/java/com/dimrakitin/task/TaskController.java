@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/v1")
 public class TaskController {
     
     private final TaskService taskService;
@@ -20,12 +20,12 @@ public class TaskController {
         this.taskService = taskService;
     }
     
-    @GetMapping(path = "api/v1/task")
+    @GetMapping(path = "/task")
     public List<Task> getTasks() {
         return taskService.getTasks();
     }
 
-    @PostMapping
+    @PostMapping(path = "/task")
     public void addNewTask(@RequestBody Task task) {
         taskService.addNewTask(task);
     }

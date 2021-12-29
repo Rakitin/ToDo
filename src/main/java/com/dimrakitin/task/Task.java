@@ -28,7 +28,11 @@ public class Task {
     public Task(String text) {
         this(null, text, false);
     }
-    
+
+    public Task() {
+        this(null, "", false);
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -51,5 +55,15 @@ public class Task {
     
     public Boolean getIsDone() {
         return isDone;
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "Task{"
+                + "id='" + id + '\''
+                + ", text=" + text
+                + ", isDone=" + isDone
+                + '}';
     }
 }
